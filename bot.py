@@ -35,9 +35,9 @@ async def start_command(message:Message):
     telegram_id = message.from_user.id
     try:
         db.add_user(full_name=full_name,telegram_id=telegram_id)
-        await message.answer(text=f"Assalomu alaykum,{full_name} botimizga hush kelibsiz\n tik tok Youtube instagramdan link yuboring men sizga vidyo yuklab beraman")
+        await message.answer(text=f"Assalomu alaykum,{full_name} botimizga hush kelibsiz\n Tik Tok Youtube instagramdan link yuboring men sizga vidyo yuklab beraman")
     except:
-        await message.answer(text=f"Assalomu alaykum, {full_name} botimizga hush kelibsiz\n tik tok Youtube instagramdan link yuboring men sizga vidyo yuklab beraman")
+        await message.answer(text=f"Assalomu alaykum, {full_name} botimizga hush kelibsiz\n Tik Tok Youtube instagramdan link yuboring men sizga vidyo yuklab beraman")
 
 
 @dp.message(IsCheckSubChannels())
@@ -56,7 +56,7 @@ async def kanalga_obuna(message:Message):
 
 @dp.message(Command("help"),IsBotAdminFilter(ADMINS))
 async def is_admin(message:Message):
-    await message.answer(text="Bu botimiz instagram teligram youTobe dan vidyo skschat qilib beradi")
+    await message.answer(text="Bu botimiz instagram telegram YouTube dan video yuklab  beradi")
 
 
 #Admin panel uchun
@@ -101,11 +101,11 @@ async def instagram_download(message:Message):
     result = insta_save(link)
     await message.answer(text="Ozroq kuting")
     if result[0]=="video":
-        await message.answer_video(video=result[1],caption="Admin: @Alisherov1ch_002")
+        await message.answer_video(video=result[1],caption="Admin: https://t.me/asilbek_11asilbek")
     elif result[0]=="rasm":
-        await message.answer_photo(photo=result[1], caption="Admin: @Alisherov1ch_002")
+        await message.answer_photo(photo=result[1], caption="Admin: https://t.me/asilbek_11asilbek")
     else:
-        await message.answer("You sent the wrong link")
+        await message.answer("You send the wrong link")
 
 
 
@@ -115,7 +115,7 @@ async def youtube_download(message:Message):
     await message.answer(text="video yuklanmoqda 🚀")
     result = youtube_save(message.text)
     video = FSInputFile(result)
-    await message.answer_video(video=video, caption="ADMIN: @Alisherov1ch_002")
+    await message.answer_video(video=video, caption="ADMIN: https://t.me/asilbek_11asilbek")
 
 @dp.message(F.text.contains("tiktok"))
 async def tiktok_download(message:Message):
@@ -136,7 +136,7 @@ async def tiktok_download(message:Message):
         if rasm:
             await message.answer_media_group(rasm)
     elif video:
-        await message.answer_video(video=video,caption="Admin: @Alisherov1ch_002")
+        await message.answer_video(video=video,caption="Admin: https://t.me/asilbek_11asilbek")
     if music: 
         await message.answer_audio(audio=music)
 
